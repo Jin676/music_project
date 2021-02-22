@@ -1,0 +1,22 @@
+<view class="videoContainer" hover-class="none" hover-stop-propagation="false">
+    <!-- header -->
+    <view class="videoHeaderContainer" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="/static/images/video/video.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <view class="search" hover-class="none" hover-stop-propagation="false">搜索音乐</view>
+        <image class="" src="/static/images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <!-- nav -->
+    <scroll-view class="scrollContainer" scroll-x="{{true}}" enable-flex>
+        <view class="navItem" wx:for="{{videoGroupList}}" wx:key="id" hover-class="none" hover-stop-propagation="false">
+            <view class="navContent {{navId === item.id?'active':''}}" id="{{item.id}}" bindtap="handleNav" hover-class="none" hover-stop-propagation="false">
+                {{item.name}}
+            </view>
+        </view>
+    </scroll-view>
+    <!-- videoList -->
+    <scroll-view class="videoListContainer" scroll-y>
+        <view class="videroContainer" hover-class="none" wx:for="{{videoGroup}}" wx:key="data.urlInfo.id"  hover-stop-propagation="false">
+        <video  class="videoItem" src="{{item.data.urlInfo.url}}"></video>
+        </view>
+    </scroll-view>
+</view>

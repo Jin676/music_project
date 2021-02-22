@@ -1,0 +1,99 @@
+/* pages/video/video.wxss */
+.videoHeader {
+    display: flex;
+    padding: 10rpx;
+}
+
+.videoHeader .videoSearch {
+    flex: 1;
+    border-radius: 10rpx;
+    border: 1rpx solid #eee;
+    color: #d43c33;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.videoHeader image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+/* 导航 */
+
+.navScroll {
+    display: flex;
+    white-space: nowrap;
+    height: 60rpx;
+}
+
+.navContent {
+    margin-left: 30rpx;
+    box-sizing: border-box;
+}
+
+.active {
+    padding-bottom: 12rpx;
+    border-bottom: 1rpx solid red;
+}
+.videoScroll{
+     /* 给scroll高度,就会呈现在盒子里一样效果 */
+    height: calc(100vh - 152rpx);
+}
+.videoItem{
+    padding: 0 3%;
+}
+/* .videoItem video{
+    width: 100%;
+    height: 360rpx;
+    border-radius: 10rpx;
+} */
+.videoItem .common{
+    width: 100%;
+    height: 360rpx;
+    border-radius: 10rpx;
+}
+/* footer */
+.footer {
+    border-top: 1rpx solid #eee;
+    padding: 20rpx 0;
+  }
+  .footer .avatar {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  
+  .footer  .nickName {
+    font-size: 26rpx;
+    vertical-align: middle;
+    margin-left: 20rpx;
+  }
+  
+  .footer .comments_praised {
+    float: right;
+  }
+  
+  .comments_praised .btn {
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .comments_praised .btn:after {
+    border: none;
+  }
+  
+  .comments_praised .item {
+    margin-left: 50rpx;
+    position: relative;
+  }
+  
+  .comments_praised .item .count {
+    position: absolute;
+    top: -20rpx;
+    font-size: 20rpx;
+  }
+  

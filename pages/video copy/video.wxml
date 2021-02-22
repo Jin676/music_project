@@ -1,0 +1,57 @@
+<!-- pages/video/video.wxml -->
+<view class="videoContainder" hover-class="none" hover-stop-propagation="false">
+    <view class="videoHeader" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="/static/images/video/video.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <view class="videoSearch" hover-class="none" hover-stop-propagation="false">搜索音乐</view>
+        <image class="" src="/static/images/logo.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <!-- 导航 -->
+    <!-- 出现进度条bug用 enable-flex弹性盒布局解决 或者将后面的属性全都删除 -->
+    <scroll-view class="navScroll" scroll-with-animation scroll-x="true" enable-flex scroll-into-view="{{'scroll' + navId}}">
+        <view id="{{'scroll' + item.id}}" class="navContainer" bindtap="change" wx:for="{{groupList}}" wx:key="id" hover-class="none" hover-stop-propagation="false">
+            <view class="navContent {{navId === item.id?'active':''}}" hover-class="none" hover-stop-propagation="false">
+                {{item.name}}
+            </view>
+        </view>
+    </scroll-view>
+
+    <!-- 视频列表 -->
+    <scroll-view class="videoScroll" refresher-enabled scroll-y enable-flex>
+        <view class="videoItem" wx:for="{{videoList}}" hover-class="none" wx:key="id" hover-stop-propagation="false">
+            <!-- 注意：这里不写wx:if 数据没到就接收显示渲染层错误 -->
+            <video class="common"
+            poster="{{item.data.coverUrl}}"
+            bindplay="handlePlay"
+            id="{{item.data.vid}}"
+            src="{{item.data.urlInfo.url}}"
+             wx:if="{{videoId === item.data.vid}}"
+             object-fit="cover"
+             bindtimeupdate="handleTimeUpdate"
+             bindended="handleVideoEnd"
+            >
+            </video>
+            <!-- 性能优化，使用image图片代替video标签 -->
+            <image wx:else bindtap="handlePlay" id="{{item.data.vid}}" class="common" src="{{item.data.coverUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                
+            </image>
+
+            <view class="footer">
+                <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+                <text class="nickName">{{item.data.creator.nickname}}</text>
+                <view class="comments_praised">
+                    <text class="item">
+                        <text class="iconfont icon-buoumaotubiao15"></text>
+                        <text class="count">{{item.data.praisedCount}}</text>
+                    </text>
+                    <text class="item">
+                        <text class="iconfont icon-pinglun1"></text>
+                        <text class="count">{{item.data.commentCount}}</text>
+                    </text>
+                    <button open-type="share" class="item btn">
+                        <text class="iconfont icon-gengduo"></text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

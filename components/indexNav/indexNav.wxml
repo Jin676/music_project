@@ -1,0 +1,6 @@
+<!-- components/indeNav/indexNav.wxml -->
+<text class="tuijianHeader" hover-class="none" hover-stop-propagation="false">{{nav}}</text>
+<view class="tuijianContent" hover-class="none" hover-stop-propagation="false">
+<text class="left" selectable="false" space="false" decode="false">{{title}}</text>
+    <view class="right" hover-class="none" hover-stop-propagation="false">查看更多</view>
+</view>

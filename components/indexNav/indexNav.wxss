@@ -1,0 +1,16 @@
+/* components/indeNav/indexNav.wxss */
+.tuijianHeader{
+    font-size: 24rpx;
+}
+.tuijianHeaderText{
+    font-size: 24rpx;
+    color: #666;
+}
+.tuijianContent{
+    padding: 10rpx 0;
+}
+.tuijianContent .right{
+    float: right;
+    border: 1px solid #cccccc;
+    border-radius: 20rpx;
+}

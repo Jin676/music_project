@@ -1,0 +1,75 @@
+<!-- 首页 -->
+<view class="indexContainer">
+    <!-- 轮播图 -->
+    <view class="Header">
+        <swiper class="" circular indicator-dots indicator-color="white" indicator-active-color="red">
+            <swiper-item wx:for="{{bannerList}}" wx:key="targetId" class="SwiperItem" item-id="">
+                <image src="{{item.pic}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 每日推荐金刚区 -->
+    <view class="navContainer" hover-class="none" hover-stop-propagation="false">
+        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+            <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
+            <text class="iconfont icon-meirituijian"></text>
+            <text class="wenzi">每日推荐</text>
+        </view>
+        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+            <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
+            <text class="iconfont icon-gedan1"></text>
+            <text class="wenzi">歌单</text>
+        </view>
+        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+            <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
+            <text class="iconfont icon-icon-ranking"></text>
+            <text class="wenzi">排行榜</text>
+        </view>
+        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+            <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
+            <text class="iconfont icon-diantai"></text>
+            <text class="wenzi">电台</text>
+        </view>
+        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+            <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
+            <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+            <text class="wenzi">直播</text>
+        </view>
+    </view>
+    <!-- 分割 -->
+    <!-- <view style="height:40rpx" class="" hover-class="none" hover-stop-propagation="false">
+        
+    </view> -->
+    <!-- 推荐歌曲 -->
+    <view class="tuijianContainer" hover-class="none" hover-stop-propagation="false">
+        <indexNav></indexNav>
+        <scroll-view class="tuijianScroll" enable-flex scroll-x="false" scroll-y="false" upper-threshold="50" lower-threshold="50" scroll-top="0" scroll-left="0" scroll-into-view="" scroll-with-animation="false" enable-back-to-top="false" bindscrolltoupper="" bindscrolltolower="" bindscroll="">
+            <view class="tuijianAfter" hover-class="none" hover-stop-propagation="false">
+                <view class="tuijianAfterItem" wx:for="{{tuijianList}}" wx:key="id" hover-class="none" hover-stop-propagation="false">
+                    <image class="" src="{{item.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <text class="afterText" selectable="false" space="false" decode="false">
+                        {{item.name}}
+                    </text>
+                </view>
+            </view>
+        </scroll-view>
+        <!-- 排行榜 -->
+        <view class="topKing" hover-class="none" hover-stop-propagation="false">
+            <indexNav title="热歌风向标" nav="排行榜"></indexNav>
+        </view>
+        <!-- 榜单 -->
+        <view class="topContainer" hover-class="none" hover-stop-propagation="false">
+            <swiper class="topSwiper">
+                <swiper-item wx:for="{{topDataList}}" wx:key="name" class="topSwiperItem" item-id="">
+                    <view class="" hover-class="none" hover-stop-propagation="false">{{item.name}}
+                    </view>
+                    <view wx:for="{{item.data}}" wx:key="id" wx:for-item="MusicItem" class="topSwiperItemNo1" hover-class="none" hover-stop-propagation="false">
+                        <image class="" src="{{MusicItem.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                        <text class="" selectable="false" space="false" decode="false">{{index}}</text>
+                        <text class="" selectable="false" space="false" decode="false">{{MusicItem.name}}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

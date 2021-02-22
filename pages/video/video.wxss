@@ -1,0 +1,49 @@
+/* pages/video/video.wxss */
+.videoContainer{
+    padding: 20rpx;
+}
+.videoHeaderContainer{
+    display: flex;
+    text-align: center;
+    
+}
+.videoHeaderContainer .search{
+    flex: 1;
+    line-height: 60rpx;
+    border: 1rpx solid #eee;
+    margin: 0 20rpx;
+    border-radius: 10rpx;
+    color: #d43c33;
+    font-size: 26rpx;
+}
+.videoHeaderContainer image{
+    width: 60rpx;
+    height: 60rpx;
+}
+
+/* nav */
+.scrollContainer{
+    display: flex;
+    white-space: nowrap;
+    height: 70rpx;
+}
+.scrollContainer .navItem{
+    padding: 10rpx 30rpx;
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.active{
+    border-bottom: 1px solid red;
+}
+
+.videroContainer{
+    margin-top: 10rpx;
+    padding: 0 3%;
+    width: 100%;
+}
+.videroContainer video{
+    width: 100%;
+    margin-top: 30rpx;
+}
