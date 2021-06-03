@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            margin: 50% 50%;
+            transform: translate(-50px,-50px);
+        }
+    </style>
+</head>
+<body>
+    <button id="box1">index++</button>
+
+    <script>
+        // 节流
+        let index =0
+        let box1 = document.getElementById("box1")
+       
+        let isClick = false
+       
+        setTimeout(() => {
+            if(isClick){
+                return
+            }
+            box1.addEventListener("click",()=>{
+            index++
+            console.log(index);
+        })
+        isClick = true
+        }, 3000);
+        
+      
+
+    </script>
+</body>
+</html>

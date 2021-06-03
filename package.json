@@ -1,0 +1,15 @@
+{
+  "name": "wangyiyunlianxi",
+  "version": "1.0.0",
+  "description": "<!-- 用户通过系统提供的暂停，页面不知道从而导致两者同时 -->\r <!-- 解决方法 -->\r     解决方法：\r         1、通过控制音频实例去监视音乐播放/暂停\r         2、三个势力方法调用\r     this.backAudioManager = wx.getBackgroundAudioManager();\r     this.backAudioManager.onPlay(()=>{\r         // 音乐开始\r         this.changePlayState(true)\r     })\r     this.backAudioManager.onPause(()=>{\r          // 音乐暂停\r          this.changePlayState(false)\r     })\r     this.backAudioManager.onStop(()=>{\r         //音乐停止\r         this.changePlayState(false)\r     })\r   },",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "pubsub-js": "^1.9.3"
+  }
+}

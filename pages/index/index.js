@@ -14,7 +14,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+ 
   onLoad:async function (options) {
+   
     //  轮播图
   let bannerListData =  await request("/banner",{type:2})
     if(bannerListData.code === 200){
@@ -44,6 +46,12 @@ Page({
         }
 
     
+},
+ //   跳转至toReacommentSong
+toReacommentSong(){
+    wx.navigateTo({
+        url: '/songPackage/pages/recommendSong/recommendSong'
+    });
 },
   /**
    * 生命周期函数--监听页面初次渲染完成

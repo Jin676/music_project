@@ -10,7 +10,7 @@
     </view>
     <!-- 每日推荐金刚区 -->
     <view class="navContainer" hover-class="none" hover-stop-propagation="false">
-        <view class="navItem" hover-class="none" hover-stop-propagation="false">
+        <view class="navItem" hover-class="none" hover-stop-propagation="false" bindtap="toReacommentSong">
             <!-- 要使用iconfont本地图标必须引入到app.wxss中否则不生效 -->
             <text class="iconfont icon-meirituijian"></text>
             <text class="wenzi">每日推荐</text>

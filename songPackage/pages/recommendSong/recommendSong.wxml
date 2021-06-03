@@ -1,0 +1,28 @@
+<!-- pages/recommendSong/recommendSong.wxml -->
+<view class="recommendSongContainer" hover-class="none" hover-stop-propagation="false">
+    <view class="header" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="/static/images/recommendSong/recommendSong.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <view class="data" hover-class="none" hover-stop-propagation="false">
+            <text class="day" selectable="false" space="false" decode="false">{{day}}/</text>
+            <text class="month" selectable="false" space="false" decode="false">{{month}}</text>
+        </view>
+    </view>
+    <!-- 列表区域 -->
+    <view class="listContaienr" hover-class="none" hover-stop-propagation="false">
+        <view class="listHeader" hover-class="none" hover-stop-propagation="false">
+            <text class="left" selectable="false" space="false" decode="false">播放全部</text>
+            <text class="changeRight" selectable="false" space="false" decode="false">多选</text>
+        </view>
+        <!-- 内容 -->
+        <scroll-view class="listScroll" scroll-y>
+            <view class=".scrollItem" wx:for="{{reCommendList}}" id="{{item.id}}" data-index="{{index}}" bindtap="songDetailTo" wx:key='id' hover-class="none" hover-stop-propagation="false">
+                <image class="musicImg" src="{{item.album.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class=".musicInfo" hover-class="none" hover-stop-propagation="false">
+                    <text class="" selectable="false" space="false" decode="false">{{item.name}}</text>
+                    <text class="" selectable="false" space="false" decode="false">{{item.artists[0].name}}</text>
+                </view>
+                <text class="iconfont icon-gengduo"></text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

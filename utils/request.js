@@ -10,6 +10,7 @@ export default (url,data={},methods="GET")=>{
                 cookie:wx.getStorageSync("cookies")?wx.getStorageSync("cookies").find(item=> item.indexOf("MUSIC_U")!== -1):""
             },
             success:(res)=>{
+                console.log(res)
                 if(data.isLogin){
                     wx.setStorage({
                         key: 'cookies',

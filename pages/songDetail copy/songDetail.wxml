@@ -1,0 +1,33 @@
+<!-- pages/songDetail/songDetail.wxml -->
+<view class="songDetailContainer" hover-class="none" hover-stop-propagation="false">
+    <view class="author" hover-class="none" hover-stop-propagation="false">
+        {{song.ar[0].name}}
+    </view>
+    <view class="circle"></view>
+    <image class="needle {{isPlay?'needlePlay':''}}" src="/static/images/song/needle.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <view class="discContainer {{isPlay?'discAnimation':''}}" hover-class="none" hover-stop-propagation="false">
+        <image class="disc" src="/static/images/song/disc.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <image class="musicImg" src="{{song.al.picUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <!-- 进度条区域 -->
+    <view class="progresssControl">
+        <text class="" selectable="false" space="false" decode="false">{{currentTime}}</text>
+        <!-- 总的进度条 -->
+       <view class="barControl">
+           <!-- 实时进度条 -->
+           <view class="audio-current-bar" style="width:{{currentWidth+'rpx'}}">
+               <!-- 小圆圈 -->
+               <view class="audio-circle"></view>
+           </view>
+       </view>
+        <text class="" selectable="false" space="false"  decode="false">{{durationTime}}</text>
+    </view>
+    <!-- 底部控制播放区域 -->
+    <view class="musicControl">
+        <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+        <text class="iconfont icon-shangyishou" id="pre" bindtap="handleSwitch"></text>
+        <text class="iconfont {{isPlay?'icon-zanting': 'icon-bofang'}} big" bindtap="handleMusicPlay"></text>
+        <text class="iconfont icon-next" id="next" bindtap="handleSwitch"></text>
+        <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+    </view>
+</view>

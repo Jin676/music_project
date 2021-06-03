@@ -14,9 +14,28 @@
         </view>
     </scroll-view>
     <!-- videoList -->
-    <scroll-view class="videoListContainer" scroll-y>
-        <view class="videroContainer" hover-class="none" wx:for="{{videoGroup}}" wx:key="data.urlInfo.id"  hover-stop-propagation="false">
-        <video  class="videoItem" src="{{item.data.urlInfo.url}}"></video>
+    <!-- refresher-enabled开启下拉刷新, bindrefresherrefresh下拉刷新回调 ,refresher-triggered下拉刷新被触发 -->
+    <scroll-view bindscrolltolower="handleToLower" class="videoListContainer" scroll-y refresher-enabled refresher-triggered="{{isTriggered}}" bindrefresherrefresh="handleRefresher">
+        <view class="videroContainer" hover-class="none" wx:for="{{videoList}}" wx:key="id" hover-stop-propagation="false">
+            <video autoplay="{{true}}" wx:if="{{vId === item.data.urlInfo.id}}"  bindended="handleEnd" bindtimeupdate="handleVideoTime" object-fit="cover"   bindplay="handleplay" id="{{item.data.vid}}" class="videoItem common"  src="{{item.data.urlInfo.url}}"></video>
+            <image wx:else class="common" bindtap="handleplay" id="{{item.data.vid}}" src="{{item.data.coverUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="footer">
+                <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+                <text class="nickName">{{item.data.creator.nickname}}</text>
+                <view class="comments_praised">
+                    <text class="item">
+                        <text class="iconfont icon-buoumaotubiao15"></text>
+                        <text class="count">{{item.data.praisedCount}}</text>
+                    </text>
+                    <text class="item">
+                        <text class="iconfont icon-pinglun1"></text>
+                        <text class="count">{{item.data.commentCount}}</text>
+                    </text>
+                    <button open-type="share" class="item btn">
+                        <text class="iconfont icon-gengduo"></text>
+                    </button>
+                </view>
+            </view>
         </view>
     </scroll-view>
 </view>

@@ -1,0 +1,127 @@
+/* pages/search/search.wxss */
+.searchContainer{
+    padding: 0 20rpx;
+}
+.header{
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 10rpx 0;
+}
+.searchInput{
+    position: relative;
+    flex: 1;
+    background: rgba(237,237,237,.3);
+    border-radius: 30rpx;
+}
+.clear{
+    position: absolute;
+    z-index: 10;
+    right: 30rpx;
+    top: 0;
+    font-size: 30rpx;
+}
+.cancel{
+    width: 100rpx;
+    text-align: center;
+}
+.searchIcon{
+    position: absolute;
+    top: 0;
+    left: 15rpx;
+}
+
+.searchInput input{
+    margin-left: 50rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.input-placeholder{
+    color: #d43c33;
+}
+
+/* 热搜 */
+.hotContainer .title{
+    font-size:28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1px solid #eee;
+}
+.hotList{
+    display: flex;
+    /* flex换行flex-wrap,下面item占多少 */
+    flex-wrap: wrap;
+}
+.hostItem{
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    max-width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.order{
+    margin:0 10rpx;
+}
+
+.hostItem .iconImg{
+    width: 30rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+}
+
+/* 搜索内容展示 */
+.searchContent{
+    color:rgba(107,100,238,.96);
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    border-bottom: 1rpx solid #d43c33;
+}
+
+.searchItem{
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+}
+
+.searchItem .content{
+    flex:1;
+    margin-left: 20rpx;
+    border-bottom: 1px solid #eee;
+    max-width: 600rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 50rpx;
+}
+
+.history .title{
+    font-size: 28rpx;
+    height: 50rpx;
+}
+/* 高度要写给title和item，给了container下面的没生效 */
+.history .historyItem{
+    height: 50rpx;
+    font-size: 26rpx;
+    background: #ededed;
+    margin-left: 20rpx;
+    padding: 0 30rpx;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+}
+/* 删除 */
+.delete{
+ position: absolute;
+ bottom: 0;
+ right: 15rpx;
+ font-size: 36rpx;
+}
